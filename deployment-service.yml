@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: suneel
+  name: vishnu
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: suneel
+      app: vishnu
   template:
     metadata:
       labels:
-        app: suneel
+        app: vishnu
     spec:
       containers:
-      - name: suneel
-        image: suneel09/feb-docker:latest
+      - name: vishnu
+        image: vishnu0728/docker-project
         ports:
         - containerPort: 3000   # Use port 3000
 
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: suneel-service
+  name: vishnu-service
 spec:
   selector:
-    app: suneel
+    app: vishnu
   ports:
   - protocol: TCP
     port: 80                 # Expose port 80
